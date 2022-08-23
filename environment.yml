@@ -9,9 +9,6 @@ dependencies:
   - pip:
       - pip-tools
 
-
-
-
 # python version
 # pip-tools 
 #   pip-compile
