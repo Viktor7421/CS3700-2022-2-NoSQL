@@ -1,2 +1,3 @@
 
-from cnn import CNN
+from .cnn import CNN
+from .mlp import MLP
