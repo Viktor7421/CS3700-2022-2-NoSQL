@@ -3,16 +3,11 @@ channels:
   - defaults
 dependencies:
   - python=3.9
-  # - cudatoolkit=10.1
-  # - cudnn=7.6
+  - cudatoolkit=10.1
+  - cudnn=7.6
+  - mongodb
+  - mongo-tools
+  - redis
   - pip
   - pip:
       - pip-tools
-
-# python version
-# pip-tools 
-#   pip-compile
-#   pip-sy,nc
-# conda env rm CS3700-2022-2
-# conda env remove -n CS3700-2022-2
-

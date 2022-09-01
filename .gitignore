@@ -1,6 +1,12 @@
 **/.ipynb_checkpoints
-**/__pycache__/
+**/__pycache__/**
+/datasets
+
+/week1/training/logs/
+/week1/model.pt
 .vscode
+
+
 /week2
 /week3
 /week4
@@ -10,4 +16,3 @@
 /week8
 /week9
 /week10
-.vscode
