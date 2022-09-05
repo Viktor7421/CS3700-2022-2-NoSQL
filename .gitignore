@@ -1,7 +1,7 @@
 **/.ipynb_checkpoints
 **/__pycache__/**
 /datasets
-
+/data
 /week1/training/logs/
 /week1/model.pt
 .vscode

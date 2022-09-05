@@ -1,17 +1,15 @@
 """Base DataModule class."""
-from pathlib import Path
-from typing import Collection, Dict, Optional, Tuple, Union
 import argparse
-
-from torch.utils.data import ConcatDataset, DataLoader
 import pytorch_lightning as pl
 
-# from engine import util
+from pathlib import Path
+from typing import Collection, Dict, Optional, Tuple, Union
+from torch.utils.data import ConcatDataset, DataLoader
 from engine.data.util import BaseDataset
 
 
 def load_and_print_info(data_module_class) -> None:
-    """Load EMNISTLines and print info."""
+    """Load MNISTLines and print info."""
     parser = argparse.ArgumentParser()
     data_module_class.add_to_argparse(parser)
     args = parser.parse_args()
@@ -19,21 +17,6 @@ def load_and_print_info(data_module_class) -> None:
     dataset.prepare_data()
     dataset.setup()
     print(dataset)
-
-
-def _download_raw_dataset(metadata: Dict, dl_dirname: Path) -> Path:
-    dl_dirname.mkdir(parents=True, exist_ok=True)
-    filename = dl_dirname / metadata["filename"]
-    if filename.exists():
-        return filename
-    print(f"Downloading raw dataset from {metadata['url']} to {filename}...")
-    util.download_url(metadata["url"], filename)
-    print("Computing SHA-256...")
-    sha256 = util.compute_sha256(filename)
-    if sha256 != metadata["sha256"]:
-        raise ValueError("Downloaded data file SHA-256 does not match that listed in metadata document.")
-    return filename
-
 
 BATCH_SIZE = 128
 NUM_WORKERS = 0
@@ -63,7 +46,7 @@ class BaseDataModule(pl.LightningDataModule):
 
     @classmethod
     def data_dirname(cls):
-        return Path(__file__).resolve().parents[3] / "data"
+        return Path(__file__).resolve().parents[3] / "datasets"
 
     @staticmethod
     def add_to_argparse(parser):
