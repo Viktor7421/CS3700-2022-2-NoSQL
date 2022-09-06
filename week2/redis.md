@@ -20,11 +20,14 @@ or run only 1 service, redis for instance,
 docker-compose run -d --rm  --name myredis -p 6379:6379 redis
 ```
 
+```
 2.4.- Get into redis for testing.
+```
+
 
 ```bash
 docker exec -it myredis bash
-redis-client
+redis-cli
 ```
 
 2.5 Test a python file with the running nosql database containers.

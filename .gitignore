@@ -1,6 +1,8 @@
 **/.ipynb_checkpoints
 **/__pycache__/**
-/datasets
+/datasets/downloaded
+
+
 /data
 /week1/training/logs/
 /week1/model.pt

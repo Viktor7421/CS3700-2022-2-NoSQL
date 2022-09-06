@@ -8,7 +8,7 @@ client = MongoClient('mongodb://0.0.0.0:27017/')
 # redisClient = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
 redisClient = redis.StrictRedis(host='0.0.0.0', port=6379, db=0)
 
-database = client['DummyDb'] #database name in mongodb,  Important: In MongoDB, a database is not created until it gets content!
+database = client['myMongoDb'] #database name in mongodb,  Important: In MongoDB, a database is not created until it gets content!
 mycol = database['Users']
 # x = database['Users'].insert_one({"name": "rick"})
 x = mycol.insert_many([{"name": "rick"}, {"name": "carlos"}])
