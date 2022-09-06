@@ -8,6 +8,9 @@
 
 2.3.- Launch containers with docker-compose.yml file:
 
+* [docker installation](https://docs.docker.com/engine/install/ubuntu/)
+* [docker compose installation](https://docs.docker.com/compose/install/linux/)
+
 Disable or stop existing deamon of redis or mongo with `sudo service redis stop`
 
 ```bash
@@ -20,14 +23,11 @@ or run only 1 service, redis for instance,
 docker-compose run -d --rm  --name myredis -p 6379:6379 redis
 ```
 
-```
 2.4.- Get into redis for testing.
-```
-
 
 ```bash
 docker exec -it myredis bash
-redis-cli
+redis-client
 ```
 
 2.5 Test a python file with the running nosql database containers.
